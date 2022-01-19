@@ -1,4 +1,4 @@
-package org.iesfm.shop.jms;
+package org.iesfm.shop.jms.sender;
 
 import org.iesfm.shop.jms.pojos.Email;
 import org.iesfm.shop.jms.pojos.User;
@@ -23,12 +23,13 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/users")
     public void createUser(@RequestBody User user) {
-        log.info(user.toString());
-        Email email = new Email(
-                "Bienvenido " + user.getUsername(),
-                user.getEmail(),
-                "Gracias por registrarte " + user.getUsername()
-        );
-        jmsTemplate.convertAndSend("emails", email);
+        log.info("Registrando usuario " + user.getUsername());
+
+        jmsTemplate.convertAndSend(
+                "shop_emails",
+                new Email(
+                        "Bienvenido " + user.getUsername(),
+                        user.getEmail(),
+                        "Gracias por registrarte " + user.getUsername()));
     }
 }

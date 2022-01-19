@@ -1,13 +1,13 @@
-package org.iesfm.shop.jms;
+package org.iesfm.shop.jms.sender;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class UserControllerMain {
+public class SenderMain {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(UserControllerMain.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(SenderMain.class, args);
 
     }
 

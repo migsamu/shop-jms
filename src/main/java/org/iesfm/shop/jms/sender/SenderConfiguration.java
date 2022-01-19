@@ -1,4 +1,4 @@
-package org.iesfm.shop.jms;
+package org.iesfm.shop.jms.sender;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
